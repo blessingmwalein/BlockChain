@@ -1,0 +1,15 @@
+{
+  "name": "blockchainback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Blesing Mwale",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "elliptic": "^6.5.4"
+  }
+}
