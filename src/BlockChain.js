@@ -1,3 +1,4 @@
+const SHA256 = require('crypto-js/sha256');
 const crypto = require('crypto');
 const EC = require('elliptic').ec;
 const ec = new EC('secp256k1');
@@ -144,6 +145,18 @@ class BlockChain {
         }
 
         return true;
+    }
+
+    isTransactionValid(fromAddress, details, signature){
+        if (!signature || signature.length === 0) {
+            throw new Error('Signature is required');
+        }
+        const publicKey = ec.keyFromPublic(fromAddress, 'hex');
+        return publicKey.verify(this.detailsHash(details), signature);
+    }
+
+    detailsHash(details){
+        return SHA256(JSON.stringify(details)).toString();
     }
 }
 
