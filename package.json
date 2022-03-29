@@ -9,7 +9,7 @@
   "author": "Blesing Mwale",
   "license": "ISC",
   "dependencies": {
-    "crypto-js": "^3.1.9-1",
+    "crypto": "^1.0.1",
     "elliptic": "^6.5.4"
   }
 }
